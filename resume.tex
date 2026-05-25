@@ -1,0 +1,117 @@
+\documentclass[11pt, letterpaper]{article}
+
+\usepackage[top=0.6in, bottom=0.6in, left=0.75in, right=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{inputenc}
+\usepackage{titlesec}
+
+\definecolor{teal}{RGB}{0, 112, 112}
+
+\hypersetup{colorlinks=true, urlcolor=teal}
+
+\pagestyle{empty}
+
+\titleformat{\section}{\normalsize\bfseries}{}{0em}{\MakeUppercase}[\color{black}\titlerule]
+\titlespacing{\section}{0pt}{8pt}{4pt}
+
+\setlist[itemize,1]{leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt, label=\textbullet}
+\setlist[itemize,2]{leftmargin=1.2em, topsep=1pt, itemsep=1pt, parsep=0pt, label=\small$\circ$}
+
+\begin{document}
+
+%--- Header ---%
+\begin{center}
+  {\LARGE\bfseries James Ko}\\[5pt]
+  \textcolor{teal}{%
+    (917) 548-6986 \;$|$\;
+    \href{mailto:jamesqko@gmail.com}{jamesqko@gmail.com} \;$|$\;
+    \href{https://linkedin.com/in/jameslko}{linkedin.com/in/jameslko} \;$|$\;
+    \href{https://github.com/jamesqo}{github.com/jamesqo}%
+  }
+\end{center}
+
+\vspace{2pt}
+
+%--- Experience ---%
+\section*{Experience}
+
+\begin{itemize}
+  \item \textbf{Bioinformatics Engineer at Memorial Sloan Kettering} \hfill \textit{June 2023 -- present}
+  \begin{itemize}
+    \item Migrate cBioPortal deployments from \textbf{MySQL} to \textbf{ClickHouse}, significantly reducing website query times and AWS RDS infrastructure costs.
+    \item Develop \textbf{blue-green deployment strategies} for ClickHouse to ensure website availability and reliability during import processes.
+    \item \textbf{Optimize cloud spending} by implementing dynamic scaling for AWS EC2 and RDS services.
+    \item Transition data storage layer from GitHub to \textbf{Amazon S3} and \textbf{Databricks}, improving accessibility for end users and reducing Git LFS storage footprint.
+    \item Migrate import workflows from Cron to \textbf{Apache Airflow}, enabling task parallelization, better observability, and accessibility to data curators.
+    \item Move towards containerized import processes that use \textbf{Docker} and \textbf{Kubernetes} instead of relying on a persistent EC2 machine, cutting cloud costs and improving reliability.
+    \item Manage Kubernetes deployments via CLI and \textbf{ArgoCD}, ensuring website reliability and spinning up new portal instances or Airflow servers as needed.
+    \item Engineer \textbf{ETL pipelines} connecting \textbf{Google BigQuery} to cBioPortal for the \textbf{National Cancer Institute}, securing significant grant money and public access to Cancer Research Data Commons data through cBioPortal Datahub.
+    \item Design API proxy server to send group statistics from NCI Secure Data Enclave to cBioPortal frontend, allowing cohort information to be displayed in a HIPAA-compliant manner.
+  \end{itemize}
+
+  \item \textbf{Software Engineer at Massachusetts General Hospital} \hfill \textit{October 2022 -- June 2023}
+  \begin{itemize}
+    \item Managed ingestion of clinical and imaging data for \textbf{DISCOVERY} and \textbf{MarkVCID} studies focused on developing \textbf{effective biomarkers} for cognitive impairment and dementia.
+    \item Utilized \textbf{CouchDB} for data storage with built-in conflict resolution and \textbf{Cron} for task automation.
+    \item Enhanced parameter checking for MarkVCID data integrity scripts, ensuring non-compliant MRI images were flagged before they reached the QC stage.
+    \item Generated weekly reports on DISCOVERY study site enrollment and data upload rates, enabling researchers to quickly address lagging sites.
+    \item Anonymized MarkVCID1 clinical form data, enabling HIPAA-compliant distribution to researchers outside the MarkVCID consortium.
+  \end{itemize}
+
+  \item \textbf{Research Intern at Boston Children's Hospital} \hfill \textit{May 2021 -- May 2022}
+  \begin{itemize}
+    \item Built \textbf{PyTorch machine learning model} for Harvard Medical School researcher to predict biomarkers of neurological conditions including Alzheimer's disease and schizophrenia.
+    \item Ran experiments using \textbf{convolutional neural networks} to determine optimal strategy for counteracting data imbalance from underrepresented age groups, finding that oversampling resulted in the best model performance.
+    \item Wrote scientific paper with analysis of findings and submitted for review to \textbf{NeuroImage}.
+  \end{itemize}
+\end{itemize}
+
+%--- Projects ---%
+\section*{Projects}
+
+\begin{itemize}
+  \item \textbf{Hermes Agent} --- Persistent AI assistant with multi-platform gateway
+  \begin{itemize}
+    \item Deployed and containerized \textbf{Hermes Agent} (NousResearch) on \textbf{Hetzner Cloud VPS} via Docker, achieving full sandbox isolation, portable data persistence under \texttt{/opt/data}, and hardware-independent lifecycle management.
+    \item Integrated multi-platform messaging gateways (\textbf{Discord}, \textbf{Telegram}) with channel-prompted topic routing; wired \textbf{Browserbase} cloud browser execution and \textbf{Tavily} search for autonomous web research and form interaction.
+    \item Connected \textbf{GitHub} (PRs, issues, code review), \textbf{Google Workspace} (Gmail, Calendar, Drive, Sheets via OAuth), and \textbf{Prefect 3} workflow orchestration with \textbf{OpenTelemetry/Jaeger} tracing for agent pipeline observability.
+    \item Configured fallback model routing (\textbf{DeepSeek v4 Flash} $\to$ \textbf{MiniMax M2.7}) via \textbf{OpenRouter}, with per-skill model overrides and context compression, keeping daily inference costs under \$0.50 while maintaining full tool-chain capability.
+    \item Built 15+ cron-scheduled agents for automated event discovery, movie recommendations, meetup monitoring, and OpenRouter cost tracking with Discord-native delivery; implemented persistent cross-session memory and reusable skill library.
+  \end{itemize}
+  \item \textbf{El Dorado} --- Autonomous job application pipeline
+  \begin{itemize}
+    \item Built multi-agent LLM pipeline using \textbf{Skyvern} and \textbf{OpenRouter} to automate end-to-end job applications across ATS platforms (Greenhouse, Lever, Workday) via headless Chrome.
+    \item Orchestrated multi-step agent workflows with \textbf{Prefect 3} and \textbf{OpenTelemetry/Jaeger} for distributed tracing, per-step logging, and AI-assisted span debugging via MCP server integration.
+    \item Implemented self-healing diagnostics: failed pipeline traces uploaded as GitHub Gists $\to$ dispatches \textbf{GitHub Actions} workflow $\to$ \textbf{Cline} autonomously generates and opens fix PRs.
+    \item Developed full-stack dashboard (\textbf{FastAPI} + \textbf{Svelte 5} + Server-Sent Events) for real-time inbox management, queue control, and job run monitoring with cancel/retry.
+    \item Containerized multi-service stack via \textbf{Docker Compose} (daemon, worker, Chrome proxy, Jaeger, Prefect server); secrets managed through \textbf{1Password CLI}.
+  \end{itemize}
+\end{itemize}
+
+%--- Education ---%
+\section*{Education}
+
+\begin{itemize}
+  \item \textbf{University of Massachusetts Amherst} \hfill \textit{September 2018 -- May 2022}
+  \begin{itemize}
+    \item Bachelor of Science, Computer Science and Mathematics \;$|$\; GPA: 3.7
+    \item Commonwealth Honors College, Dean's List, Chancellor's Award
+    \item Coursework: Data Science, Machine Learning, Natural Language Processing, Artificial Intelligence, Health Informatics, Information Retrieval, Software Engineering, Networking, Game Programming, Algorithms
+  \end{itemize}
+\end{itemize}
+
+%--- Technical Skills ---%
+\section*{Technical Skills}
+
+\begin{itemize}
+  \item \textbf{Languages:} Python, TypeScript, JavaScript, C\#, R, C/C++, Java, Bash, SQL
+  \item \textbf{AI \& ML:} PyTorch, Scikit-Learn, TensorFlow, Pandas/NumPy, Skyvern, OpenRouter, Playwright
+  \item \textbf{Backend \& Data:} FastAPI, SQLite, ClickHouse, Google BigQuery, Amazon S3, Databricks, Apache Airflow, Prefect 3, CouchDB
+  \item \textbf{Frontend:} React, Svelte 5, Vite
+  \item \textbf{Infrastructure \& Observability:} Docker, Kubernetes, ArgoCD, GitHub Actions, AWS (EC2, RDS, S3), OpenTelemetry, Jaeger, nginx
+\end{itemize}
+
+\end{document}
