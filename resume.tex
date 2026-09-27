@@ -73,6 +73,13 @@
 \section*{Projects}
 
 \begin{itemize}
+  \item \textbf{gohawk} --- Static analyzer for Go concurrency and resource bugs
+  \begin{itemize}
+    \item Built SSA-based static analysis tool with \textbf{8 analyzers} detecting lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects across concurrency and resource-lifecycle groups.
+    \item Implemented compositional function summaries inspired by Meta's \textbf{Infer}: each function's effects on arguments and results summarized once, letting analysis track resources across helpers and package boundaries.
+    \item Found and fixed real bugs in \textbf{Docker}, \textbf{Kubernetes}, and \textbf{Caddy} via upstream PRs; ships with \textbf{go vet} integration and documentation at gohawk.dev.
+    \item Maintained \textbf{90\%+} test coverage with CI across Go 1.26/1.27.
+  \end{itemize}
   \item \textbf{Hermes Agent} --- Persistent AI assistant with multi-platform gateway
   \begin{itemize}
     \item Deployed and containerized \textbf{Hermes Agent} (NousResearch) on \textbf{Hetzner Cloud VPS} via Docker, achieving full sandbox isolation, portable data persistence under \texttt{/opt/data}, and hardware-independent lifecycle management.
