@@ -313,3 +313,8 @@ TSWLatexianTemp*
 
 # End of https://www.toptal.com/developers/gitignore/api/latex
 
+
+# Resume MCP
+node_modules/
+dist/
+.resume-mcp/
