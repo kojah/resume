@@ -20,8 +20,8 @@
 \titleformat{\section}{\normalsize\bfseries}{}{0em}{\MakeUppercase}[\color{black}\titlerule]
 \titlespacing{\section}{0pt}{8pt}{4pt}
 
-\setlist[itemize,1]{leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt, label=\textbullet}
-\setlist[itemize,2]{leftmargin=1.2em, topsep=1pt, itemsep=1pt, parsep=0pt, label=\small$\circ$}
+\setlist[itemize,1]{leftmargin=1.2em, topsep=3pt, itemsep=4pt, parsep=0pt, label=\textbullet}
+\setlist[itemize,2]{leftmargin=1.2em, topsep=2pt, itemsep=3pt, parsep=0pt, label=\small$\circ$}
 
 \begin{document}
 
@@ -41,16 +41,12 @@
 %--- Projects ---%
 \section*{Projects}
 
-\begingroup\small
 \begin{itemize}
   \item \textbf{Hermes Agent} --- Persistent AI assistant with multi-platform gateway
   \begin{itemize}
-    \item Helped integrate \textbf{Hermes Agent} into company import workflows through a \textbf{Bun MCP server}.
-    \item Deployed and containerized \textbf{Hermes Agent} (NousResearch) on \textbf{Hetzner Cloud VPS} via Docker, achieving full sandbox isolation, portable data persistence under \texttt{/opt/data}, and hardware-independent lifecycle management.
-    \item Integrated multi-platform messaging gateways (\textbf{Slack}, \textbf{Discord}, \textbf{Telegram}) with channel-prompted topic routing; wired \textbf{Browserbase} cloud browser execution and \textbf{Tavily} search for autonomous web research and form interaction.
-    \item Connected \textbf{GitHub} (PRs, issues, code review), \textbf{Google Workspace} (Gmail, Calendar, Drive, Sheets via OAuth), and \textbf{Prefect 3} workflow orchestration with \textbf{OpenTelemetry/Jaeger} tracing for agent pipeline observability.
-    \item Configured fallback model routing (\textbf{DeepSeek v4 Flash} $\to$ \textbf{MiniMax M2.7}) via \textbf{OpenRouter}, with per-skill model overrides and context compression, keeping daily inference costs under \$0.50 while maintaining full tool-chain capability.
-    \item Built 15+ cron-scheduled agents for automated event discovery, movie recommendations, meetup monitoring, and OpenRouter cost tracking with Discord-native delivery; implemented persistent cross-session memory and reusable skill library.
+    \item Helped integrate \textbf{Hermes Agent} into company import workflows through a \textbf{Bun MCP server}; integrated \textbf{Slack}, Discord, and Telegram messaging gateways.
+    \item Containerized and deployed Hermes Agent on \textbf{Hetzner Cloud} with \textbf{Docker} and persistent storage; configured model fallback routing and cross-session memory.
+    \item Connected GitHub and Google Workspace tools to agent workflows; integrated \textbf{Prefect 3} orchestration and \textbf{OpenTelemetry/Jaeger} tracing for pipeline observability.
   \end{itemize}
   \item \textbf{\href{https://github.com/kojah/mash}{Mash}} --- Searchable memory for coding agents
   \begin{itemize}
@@ -60,46 +56,36 @@
   \end{itemize}
   \item \textbf{\href{https://github.com/kojah/gohawk}{gohawk}} --- Static analyzer for Go concurrency and resource bugs
   \begin{itemize}
-    \item Built SSA-based static analysis tool detecting lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects across concurrency and resource-lifecycle groups.
-    \item Implemented compositional function summaries inspired by Meta's \textbf{Infer}: each function's effects on arguments and results summarized once, letting analysis track resources across helpers and package boundaries.
-    \item Found and fixed real bugs in \textbf{Docker}, \textbf{Kubernetes}, and \textbf{Caddy} via upstream PRs; ships with \textbf{go vet} integration and documentation at gohawk.dev.
-    \item Validate analyzer precision against real-world repositories and maintain focused regression tests for both reported defects and safe patterns; run cross-version Go compatibility checks in CI.
+    \item Built an \textbf{SSA-based static analyzer} for Go that detects lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects; integrated with \textbf{go vet}.
+    \item Implemented compositional function summaries inspired by Meta's \textbf{Infer} to track resource ownership across helpers and package boundaries.
+    \item Found and fixed bugs in \textbf{Docker}, \textbf{Kubernetes}, and \textbf{Caddy} through upstream PRs, with regression tests for defects and safe patterns.
     \item Presented \textbf{gohawk} at \textbf{GolangNYC}.
   \end{itemize}
 \end{itemize}
-\endgroup
 
 %--- Experience ---%
+\newpage
 \section*{Experience}
 
 \begin{itemize}
   \item \textbf{Bioinformatics Engineer at Memorial Sloan Kettering} \hfill \textit{June 2023 -- present}
   \begin{itemize}
-    \item Migrate cBioPortal deployments from \textbf{MySQL} to \textbf{ClickHouse}, significantly reducing website query times and AWS RDS infrastructure costs.
-    \item Develop \textbf{blue-green deployment strategies} for ClickHouse to ensure website availability and reliability during import processes.
-    \item \textbf{Optimize cloud spending} by implementing dynamic scaling for AWS EC2 and RDS services.
-    \item Transition data storage layer from GitHub to \textbf{Amazon S3} and \textbf{Databricks}, improving accessibility for end users and reducing Git LFS storage footprint.
-    \item Migrate import workflows from Cron to \textbf{Apache Airflow}, enabling task parallelization, better observability, and accessibility to data curators.
-    \item Move towards containerized import processes that use \textbf{Docker} and \textbf{Kubernetes} instead of relying on a persistent EC2 machine, cutting cloud costs and improving reliability.
-    \item Manage Kubernetes deployments via CLI and \textbf{ArgoCD}, ensuring website reliability and spinning up new portal instances or Airflow servers as needed.
-    \item Engineer \textbf{ETL pipelines} connecting \textbf{Google BigQuery} to cBioPortal for the \textbf{National Cancer Institute}, securing significant grant money and public access to Cancer Research Data Commons data through cBioPortal Datahub.
-    \item Design API proxy server to send group statistics from NCI Secure Data Enclave to cBioPortal frontend, allowing cohort information to be displayed in a HIPAA-compliant manner.
+    \item Migrate cBioPortal from \textbf{MySQL} to \textbf{ClickHouse} and develop \textbf{blue-green deployments} to keep the website available during data imports.
+    \item Migrate Cron imports to \textbf{Apache Airflow} and containerize workflows with \textbf{Docker/Kubernetes}; manage portal and Airflow deployments through \textbf{ArgoCD}.
+    \item Move GitHub-backed data storage to \textbf{Amazon S3} and \textbf{Databricks}, reducing Git LFS usage; implement dynamic scaling for AWS EC2 and RDS services.
+    \item Engineer \textbf{Google BigQuery} ETL pipelines for the \textbf{National Cancer Institute}, making Cancer Research Data Commons datasets publicly accessible through cBioPortal Datahub.
+    \item Design an API proxy that exposes aggregate cohort statistics from the \textbf{NCI Secure Data Enclave} to the cBioPortal frontend.
   \end{itemize}
 
   \item \textbf{Software Engineer at Massachusetts General Hospital} \hfill \textit{October 2022 -- June 2023}
   \begin{itemize}
-    \item Managed ingestion of clinical and imaging data for \textbf{DISCOVERY} and \textbf{MarkVCID} studies focused on developing \textbf{effective biomarkers} for cognitive impairment and dementia.
-    \item Utilized \textbf{CouchDB} for data storage with built-in conflict resolution and \textbf{Cron} for task automation.
-    \item Enhanced parameter checking for MarkVCID data integrity scripts, ensuring non-compliant MRI images were flagged before they reached the QC stage.
-    \item Generated weekly reports on DISCOVERY study site enrollment and data upload rates, enabling researchers to quickly address lagging sites.
-    \item Anonymized MarkVCID1 clinical form data, enabling HIPAA-compliant distribution to researchers outside the MarkVCID consortium.
+    \item Managed clinical and imaging data ingestion for \textbf{DISCOVERY} and \textbf{MarkVCID}, studies of biomarkers for cognitive impairment and dementia.
+    \item Strengthened MRI validation before quality control and anonymized clinical form data for distribution to researchers outside the MarkVCID consortium.
   \end{itemize}
 
   \item \textbf{Research Intern at Boston Children's Hospital} \hfill \textit{May 2021 -- May 2022}
   \begin{itemize}
-    \item Built \textbf{PyTorch machine learning model} for Harvard Medical School researcher to predict biomarkers of neurological conditions including Alzheimer's disease and schizophrenia.
-    \item Ran experiments using \textbf{convolutional neural networks} to determine optimal strategy for counteracting data imbalance from underrepresented age groups, finding that oversampling resulted in the best model performance.
-    \item Wrote scientific paper with analysis of findings and submitted for review to \textbf{NeuroImage}.
+    \item Built a \textbf{PyTorch} model to predict neurological biomarkers; evaluated convolutional neural networks and sampling strategies for underrepresented age groups, finding oversampling performed best in the experiments.
   \end{itemize}
 \end{itemize}
 
@@ -109,9 +95,7 @@
 \begin{itemize}
   \item \textbf{University of Massachusetts Amherst} \hfill \textit{September 2018 -- May 2022}
   \begin{itemize}
-    \item Bachelor of Science, Computer Science and Mathematics \;$|$\; GPA: 3.7
-    \item Commonwealth Honors College, Dean's List, Chancellor's Award
-    \item Coursework: Data Science, Machine Learning, Natural Language Processing, Artificial Intelligence, Health Informatics, Information Retrieval, Software Engineering, Networking, Game Programming, Algorithms
+    \item Bachelor of Science, Computer Science and Mathematics; Commonwealth Honors College
   \end{itemize}
 \end{itemize}
 
@@ -119,10 +103,10 @@
 \section*{Technical Skills}
 
 \begin{itemize}
-  \item \textbf{Languages:} Rust, Go (Golang), Python, TypeScript, JavaScript, C\#, R, C/C++, Java, Bash, SQL
-  \item \textbf{AI Engineering \& ML:} MCP, LLM integration, agent workflows, hybrid retrieval, cross-encoder reranking, PyTorch, Scikit-Learn, TensorFlow, Pandas/NumPy, Skyvern, OpenRouter, Playwright
-  \item \textbf{Backend \& Data:} FastAPI, SQLite, Qdrant, ClickHouse, Google BigQuery, Amazon S3, Databricks, Apache Airflow, Prefect 3, CouchDB
-  \item \textbf{Frontend:} React, Svelte 5, Vite
+  \item \textbf{Languages:} Rust, Go (Golang), Python, TypeScript, JavaScript, Bash, SQL
+  \item \textbf{AI Engineering \& ML:} MCP, LLM integration, agent workflows, hybrid retrieval, cross-encoder reranking, PyTorch, Scikit-Learn, TensorFlow, Pandas/NumPy, OpenRouter
+  \item \textbf{Backend \& Data:} Bun, FastAPI, SQLite, Qdrant, ClickHouse, BigQuery, S3, Databricks, Airflow, Prefect
+  \item \textbf{Protocols \& Automation:} gRPC, Protobuf, WebSockets, Playwright
   \item \textbf{Infrastructure \& Observability:} Docker, Kubernetes, ArgoCD, GitHub Actions, AWS (EC2, RDS, S3), OpenTelemetry, Jaeger, nginx
 \end{itemize}
 
