@@ -72,7 +72,14 @@
 %--- Projects ---%
 \section*{Projects}
 
+\begingroup\small
 \begin{itemize}
+  \item \textbf{\href{https://github.com/kojah/mash}{Mash}} --- Searchable memory for coding agents
+  \begin{itemize}
+    \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor.
+    \item Implemented \textbf{hybrid search} in \textbf{Qdrant}, combining lexical and HNSW vector retrieval with reciprocal rank fusion and cross-encoder reranking; preserved canonical history in \textbf{SQLite} for incremental indexing and replayable local/shared search indexes.
+    \item Tested synchronization and crash recovery with bounded \textbf{TLA+ models}, property-based tests, and fault injection against disposable backends, checking that shared search indexes remain consistent with committed history.
+  \end{itemize}
   \item \textbf{\href{https://github.com/kojah/gohawk}{gohawk}} --- Static analyzer for Go concurrency and resource bugs
   \begin{itemize}
     \item Built SSA-based static analysis tool detecting lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects across concurrency and resource-lifecycle groups.
@@ -99,6 +106,7 @@
 \end{itemize}
 
 %--- Education ---%
+\endgroup
 \section*{Education}
 
 \begin{itemize}
@@ -114,9 +122,9 @@
 \section*{Technical Skills}
 
 \begin{itemize}
-  \item \textbf{Languages:} Go, Python, TypeScript, JavaScript, C\#, R, C/C++, Java, Bash, SQL
+  \item \textbf{Languages:} Rust, Go, Python, TypeScript, JavaScript, C\#, R, C/C++, Java, Bash, SQL
   \item \textbf{AI \& ML:} PyTorch, Scikit-Learn, TensorFlow, Pandas/NumPy, Skyvern, OpenRouter, Playwright
-  \item \textbf{Backend \& Data:} FastAPI, SQLite, ClickHouse, Google BigQuery, Amazon S3, Databricks, Apache Airflow, Prefect 3, CouchDB
+  \item \textbf{Backend \& Data:} FastAPI, SQLite, Qdrant, ClickHouse, Google BigQuery, Amazon S3, Databricks, Apache Airflow, Prefect 3, CouchDB
   \item \textbf{Frontend:} React, Svelte 5, Vite
   \item \textbf{Infrastructure \& Observability:} Docker, Kubernetes, ArgoCD, GitHub Actions, AWS (EC2, RDS, S3), OpenTelemetry, Jaeger, nginx
 \end{itemize}
