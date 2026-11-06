@@ -38,6 +38,36 @@
 
 \vspace{2pt}
 
+%--- Projects ---%
+\section*{Projects}
+
+\begingroup\small
+\begin{itemize}
+  \item \textbf{Hermes Agent} --- Persistent AI assistant with multi-platform gateway
+  \begin{itemize}
+    \item Deployed and containerized \textbf{Hermes Agent} (NousResearch) on \textbf{Hetzner Cloud VPS} via Docker, achieving full sandbox isolation, portable data persistence under \texttt{/opt/data}, and hardware-independent lifecycle management.
+    \item Integrated multi-platform messaging gateways (\textbf{Discord}, \textbf{Telegram}) with channel-prompted topic routing; wired \textbf{Browserbase} cloud browser execution and \textbf{Tavily} search for autonomous web research and form interaction.
+    \item Connected \textbf{GitHub} (PRs, issues, code review), \textbf{Google Workspace} (Gmail, Calendar, Drive, Sheets via OAuth), and \textbf{Prefect 3} workflow orchestration with \textbf{OpenTelemetry/Jaeger} tracing for agent pipeline observability.
+    \item Configured fallback model routing (\textbf{DeepSeek v4 Flash} $\to$ \textbf{MiniMax M2.7}) via \textbf{OpenRouter}, with per-skill model overrides and context compression, keeping daily inference costs under \$0.50 while maintaining full tool-chain capability.
+    \item Built 15+ cron-scheduled agents for automated event discovery, movie recommendations, meetup monitoring, and OpenRouter cost tracking with Discord-native delivery; implemented persistent cross-session memory and reusable skill library.
+  \end{itemize}
+  \item \textbf{\href{https://github.com/kojah/mash}{Mash}} --- Searchable memory for coding agents
+  \begin{itemize}
+    \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor.
+    \item Implemented \textbf{Qdrant filtered HNSW} and lexical retrieval, reciprocal rank fusion, and cross-encoder reranking; published vectors through \textbf{Tonic/gRPC}.
+    \item Built replayable \textbf{SQLite}-backed synchronization over authenticated \textbf{WebSockets} with \textbf{Protobuf} envelopes and \textbf{zstd}-compressed payloads; tested publication and crash recovery with bounded \textbf{TLA+ models}, property-based tests, and fault injection.
+  \end{itemize}
+  \item \textbf{\href{https://github.com/kojah/gohawk}{gohawk}} --- Static analyzer for Go concurrency and resource bugs
+  \begin{itemize}
+    \item Built SSA-based static analysis tool detecting lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects across concurrency and resource-lifecycle groups.
+    \item Implemented compositional function summaries inspired by Meta's \textbf{Infer}: each function's effects on arguments and results summarized once, letting analysis track resources across helpers and package boundaries.
+    \item Found and fixed real bugs in \textbf{Docker}, \textbf{Kubernetes}, and \textbf{Caddy} via upstream PRs; ships with \textbf{go vet} integration and documentation at gohawk.dev.
+    \item Validate analyzer precision against real-world repositories and maintain focused regression tests for both reported defects and safe patterns; run cross-version Go compatibility checks in CI.
+    \item Presented \textbf{gohawk} at \textbf{GolangNYC}.
+  \end{itemize}
+\end{itemize}
+\endgroup
+
 %--- Experience ---%
 \section*{Experience}
 
@@ -72,44 +102,7 @@
   \end{itemize}
 \end{itemize}
 
-%--- Projects ---%
-\section*{Projects}
-
-\begingroup\small
-\begin{itemize}
-  \item \textbf{\href{https://github.com/kojah/mash}{Mash}} --- Searchable memory for coding agents
-  \begin{itemize}
-    \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor.
-    \item Implemented \textbf{Qdrant filtered HNSW} and lexical retrieval, reciprocal rank fusion, and cross-encoder reranking; published vectors through \textbf{Tonic/gRPC}.
-    \item Built replayable \textbf{SQLite}-backed synchronization over authenticated \textbf{WebSockets} with \textbf{Protobuf} envelopes and \textbf{zstd}-compressed payloads; tested publication and crash recovery with bounded \textbf{TLA+ models}, property-based tests, and fault injection.
-  \end{itemize}
-  \item \textbf{\href{https://github.com/kojah/gohawk}{gohawk}} --- Static analyzer for Go concurrency and resource bugs
-  \begin{itemize}
-    \item Built SSA-based static analysis tool detecting lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects across concurrency and resource-lifecycle groups.
-    \item Implemented compositional function summaries inspired by Meta's \textbf{Infer}: each function's effects on arguments and results summarized once, letting analysis track resources across helpers and package boundaries.
-    \item Found and fixed real bugs in \textbf{Docker}, \textbf{Kubernetes}, and \textbf{Caddy} via upstream PRs; ships with \textbf{go vet} integration and documentation at gohawk.dev.
-    \item Validate analyzer precision against real-world repositories and maintain focused regression tests for both reported defects and safe patterns; run cross-version Go compatibility checks in CI.
-  \end{itemize}
-  \item \textbf{Hermes Agent} --- Persistent AI assistant with multi-platform gateway
-  \begin{itemize}
-    \item Deployed and containerized \textbf{Hermes Agent} (NousResearch) on \textbf{Hetzner Cloud VPS} via Docker, achieving full sandbox isolation, portable data persistence under \texttt{/opt/data}, and hardware-independent lifecycle management.
-    \item Integrated multi-platform messaging gateways (\textbf{Discord}, \textbf{Telegram}) with channel-prompted topic routing; wired \textbf{Browserbase} cloud browser execution and \textbf{Tavily} search for autonomous web research and form interaction.
-    \item Connected \textbf{GitHub} (PRs, issues, code review), \textbf{Google Workspace} (Gmail, Calendar, Drive, Sheets via OAuth), and \textbf{Prefect 3} workflow orchestration with \textbf{OpenTelemetry/Jaeger} tracing for agent pipeline observability.
-    \item Configured fallback model routing (\textbf{DeepSeek v4 Flash} $\to$ \textbf{MiniMax M2.7}) via \textbf{OpenRouter}, with per-skill model overrides and context compression, keeping daily inference costs under \$0.50 while maintaining full tool-chain capability.
-    \item Built 15+ cron-scheduled agents for automated event discovery, movie recommendations, meetup monitoring, and OpenRouter cost tracking with Discord-native delivery; implemented persistent cross-session memory and reusable skill library.
-  \end{itemize}
-  \item \textbf{El Dorado} --- Autonomous job application pipeline
-  \begin{itemize}
-    \item Built multi-agent LLM pipeline using \textbf{Skyvern} and \textbf{OpenRouter} to automate end-to-end job applications across ATS platforms (Greenhouse, Lever, Workday) via headless Chrome.
-    \item Orchestrated multi-step agent workflows with \textbf{Prefect 3} and \textbf{OpenTelemetry/Jaeger} for distributed tracing, per-step logging, and AI-assisted span debugging via MCP server integration.
-    \item Implemented self-healing diagnostics: failed pipeline traces uploaded as GitHub Gists $\to$ dispatches \textbf{GitHub Actions} workflow $\to$ \textbf{Cline} autonomously generates and opens fix PRs.
-    \item Developed full-stack dashboard (\textbf{FastAPI} + \textbf{Svelte 5} + Server-Sent Events) for real-time inbox management, queue control, and job run monitoring with cancel/retry.
-    \item Containerized multi-service stack via \textbf{Docker Compose} (daemon, worker, Chrome proxy, Jaeger, Prefect server); secrets managed through \textbf{1Password CLI}.
-  \end{itemize}
-\end{itemize}
-
 %--- Education ---%
-\endgroup
 \section*{Education}
 
 \begin{itemize}
