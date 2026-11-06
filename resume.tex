@@ -45,8 +45,9 @@
 \begin{itemize}
   \item \textbf{Hermes Agent} --- Persistent AI assistant with multi-platform gateway
   \begin{itemize}
+    \item Helped integrate \textbf{Hermes Agent} into company import workflows through a \textbf{Bun MCP server}.
     \item Deployed and containerized \textbf{Hermes Agent} (NousResearch) on \textbf{Hetzner Cloud VPS} via Docker, achieving full sandbox isolation, portable data persistence under \texttt{/opt/data}, and hardware-independent lifecycle management.
-    \item Integrated multi-platform messaging gateways (\textbf{Discord}, \textbf{Telegram}) with channel-prompted topic routing; wired \textbf{Browserbase} cloud browser execution and \textbf{Tavily} search for autonomous web research and form interaction.
+    \item Integrated multi-platform messaging gateways (\textbf{Slack}, \textbf{Discord}, \textbf{Telegram}) with channel-prompted topic routing; wired \textbf{Browserbase} cloud browser execution and \textbf{Tavily} search for autonomous web research and form interaction.
     \item Connected \textbf{GitHub} (PRs, issues, code review), \textbf{Google Workspace} (Gmail, Calendar, Drive, Sheets via OAuth), and \textbf{Prefect 3} workflow orchestration with \textbf{OpenTelemetry/Jaeger} tracing for agent pipeline observability.
     \item Configured fallback model routing (\textbf{DeepSeek v4 Flash} $\to$ \textbf{MiniMax M2.7}) via \textbf{OpenRouter}, with per-skill model overrides and context compression, keeping daily inference costs under \$0.50 while maintaining full tool-chain capability.
     \item Built 15+ cron-scheduled agents for automated event discovery, movie recommendations, meetup monitoring, and OpenRouter cost tracking with Discord-native delivery; implemented persistent cross-session memory and reusable skill library.
