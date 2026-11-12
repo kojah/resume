@@ -49,9 +49,11 @@
   \end{itemize}
   \item \textbf{\href{https://github.com/kojah/mash}{Mash}} --- Searchable memory for coding agents
   \begin{itemize}
-    \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor.
+    \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor, on Linux, macOS, and Windows.
+    \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it at the start of later sessions, and records whose evidence no longer holds are left out.
     \item Implemented \textbf{Qdrant filtered HNSW} and lexical retrieval, reciprocal rank fusion, and cross-encoder reranking; published vectors through \textbf{Tonic/gRPC}.
     \item Built replayable \textbf{SQLite}-backed synchronization over authenticated \textbf{WebSockets} with \textbf{Protobuf} envelopes and \textbf{zstd}-compressed payloads; tested publication and crash recovery with bounded \textbf{TLA+ models}, property-based tests, and fault injection.
+    \item Built a web dashboard in \textbf{Svelte 5} and \textbf{TypeScript} on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
   \end{itemize}
   \item \textbf{\href{https://github.com/kojah/gohawk}{gohawk}} --- Static analyzer for Go concurrency and resource bugs
   \begin{itemize}
