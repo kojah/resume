@@ -47,7 +47,7 @@
     \item Helped integrate \textbf{Hermes Agent} into company import workflows through a \textbf{Bun MCP server}; integrated \textbf{Slack}, Discord, and Telegram messaging gateways.
     \item Containerized Hermes Agent with \textbf{Docker} and deployed it to the company \textbf{Kubernetes} cluster on a dedicated \textbf{Karpenter} NodePool, keeping it reliably available on \textbf{EC2 Spot} instances; configured model fallback routing and cross-session memory.
   \end{itemize}
-  \item \textbf{\href{https://github.com/kojah/mash}{Mash}} --- Searchable memory for coding agents
+  \item \textbf{Mash} --- Searchable memory for coding agents \hfill \href{https://github.com/kojah/mash}{github.com/kojah/mash}
   \begin{itemize}
     \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor, on Linux, macOS, and Windows.
     \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it at the start of later sessions, and records whose evidence no longer holds are left out.
@@ -55,7 +55,7 @@
     \item Built replayable \textbf{SQLite}-backed synchronization over authenticated \textbf{WebSockets} with \textbf{Protobuf} envelopes and \textbf{zstd}-compressed payloads; tested publication and crash recovery with bounded \textbf{TLA+ models}, property-based tests, and fault injection.
     \item Built a web dashboard in \textbf{Svelte 5} and \textbf{TypeScript} on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
   \end{itemize}
-  \item \textbf{\href{https://github.com/kojah/gohawk}{gohawk}} --- Static analyzer for Go concurrency and resource bugs
+  \item \textbf{gohawk} --- Static analyzer for Go concurrency and resource bugs \hfill \href{https://github.com/kojah/gohawk}{github.com/kojah/gohawk}
   \begin{itemize}
     \item Built an \textbf{SSA-based static analyzer} for Go that detects lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects; integrated with \textbf{go vet}.
     \item Implemented compositional function summaries inspired by Meta's \textbf{Infer} to track resource ownership across helpers and package boundaries.
