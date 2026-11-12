@@ -62,7 +62,7 @@
   \begin{itemize}
     \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor, on Linux, macOS, and Windows.
     \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it at the start of later sessions, and records whose evidence no longer holds are left out.
-    \item Implemented \textbf{Qdrant filtered HNSW} and sparse lexical retrieval, reciprocal rank fusion, and cross-encoder reranking; ingested vectors into Qdrant over \textbf{Tonic/gRPC}.
+    \item Implemented \textbf{Qdrant filtered HNSW} and sparse lexical retrieval, \textbf{reciprocal rank fusion}, and \textbf{cross-encoder reranking}; ingested vectors into Qdrant over \textbf{Tonic/gRPC}.
     \item Designed it as a \textbf{distributed system}: each machine keeps its own \textbf{SQLite} history and replicates it to a shared index over authenticated \textbf{WebSockets} (\textbf{Protobuf}, \textbf{zstd}); replication is replayable and resumes safely after a crash, verified with bounded \textbf{TLA+ models}, property-based tests, and fault injection.
     \item Built a web dashboard on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
   \end{itemize}
