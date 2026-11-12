@@ -42,18 +42,13 @@
 \section*{Projects}
 
 \begin{itemize}
-  \item \textbf{Hermes Agent} --- Persistent AI assistant with multi-platform gateway
-  \begin{itemize}
-    \item Helped integrate \textbf{Hermes Agent} into company import workflows through a \textbf{Bun MCP server}; integrated \textbf{Slack}, Discord, and Telegram messaging gateways.
-    \item Containerized Hermes Agent with \textbf{Docker} and deployed it to the company \textbf{Kubernetes} cluster on a dedicated \textbf{Karpenter} NodePool, keeping it reliably available on \textbf{EC2 Spot} instances; configured model fallback routing and cross-session memory.
-  \end{itemize}
   \item \textbf{Mash} --- Searchable memory for coding agents \hfill \href{https://github.com/kojah/mash}{github.com/kojah/mash}
   \begin{itemize}
     \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor, on Linux, macOS, and Windows.
     \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it at the start of later sessions, and records whose evidence no longer holds are left out.
     \item Implemented \textbf{Qdrant filtered HNSW} and lexical retrieval, reciprocal rank fusion, and cross-encoder reranking; published vectors through \textbf{Tonic/gRPC}.
     \item Built replayable \textbf{SQLite}-backed synchronization over authenticated \textbf{WebSockets} with \textbf{Protobuf} envelopes and \textbf{zstd}-compressed payloads; tested publication and crash recovery with bounded \textbf{TLA+ models}, property-based tests, and fault injection.
-    \item Built a web dashboard in \textbf{Svelte 5} and \textbf{TypeScript} on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
+    \item Built a web dashboard on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
   \end{itemize}
   \item \textbf{gohawk} --- Static analyzer for Go concurrency and resource bugs \hfill \href{https://github.com/kojah/gohawk}{github.com/kojah/gohawk}
   \begin{itemize}
@@ -71,6 +66,7 @@
 \begin{itemize}
   \item \textbf{Bioinformatics Engineer at Memorial Sloan Kettering} \hfill \textit{June 2023 -- present}
   \begin{itemize}
+    \item Integrate \textbf{Hermes Agent}, a persistent AI assistant, into import workflows through a \textbf{Bun MCP server} with \textbf{Slack}, Discord, and Telegram gateways; deploy it to the \textbf{Kubernetes} cluster on a \textbf{Karpenter} NodePool for reliable uptime on \textbf{EC2 Spot} instances.
     \item Migrate cBioPortal from \textbf{MySQL} to \textbf{ClickHouse} and develop \textbf{blue-green deployments} to keep the website available during data imports.
     \item Migrate Cron imports to \textbf{Apache Airflow} and containerize workflows with \textbf{Docker/Kubernetes}; manage portal and Airflow deployments through \textbf{ArgoCD}.
     \item Move GitHub-backed data storage to \textbf{Amazon S3} and \textbf{Databricks}, reducing Git LFS usage; implement dynamic scaling for AWS EC2 and RDS services.
