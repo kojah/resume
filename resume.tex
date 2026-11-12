@@ -69,6 +69,7 @@
   \item \textbf{gohawk} --- Static analyzer for Go concurrency and resource bugs \hfill \textbf{\href{https://gohawk.dev}{gohawk.dev}}
   \begin{itemize}
     \item Built an \textbf{SSA-based static analyzer} for Go that detects lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects; integrated with \textbf{go vet}.
+    \item Analyzes all of \textbf{Kubernetes} (about 1,600 packages) in \textbf{76 seconds}: a custom runner schedules packages on a topological worklist and never holds the whole program in memory.
     \item Implemented compositional function summaries inspired by Meta's \textbf{Infer} to track resource ownership across helpers and package boundaries.
     \item Found and fixed bugs in \textbf{Docker}, \textbf{Kubernetes}, and \textbf{Caddy} through upstream PRs.
     \item Presented \textbf{gohawk} at \textbf{GolangNYC}.
