@@ -1,6 +1,6 @@
 # Résumé MCP
 
-This private repository holds `resume.tex`, the main résumé, and its checked-in
+This repository holds `resume.tex`, the main résumé, and its checked-in
 `resume.pdf`. It also provides a Bun + TypeScript stdio MCP server for reading,
 editing, tailoring, comparing, and compiling the résumé.
 
