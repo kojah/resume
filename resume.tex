@@ -86,7 +86,7 @@
     \item Connect \textbf{Hermes Agent}, a persistent AI assistant, to a \textbf{Bun MCP server} that runs data imports, with \textbf{Slack}, Discord, and Telegram gateways; fallback model routing keeps inference under \textbf{\$0.50 a day}.
     \item To protect patient privacy and decouple study data from its database representation, designed a \textbf{federated backend} for cBioPortal: a \textbf{Go} proxy that streams \textbf{NCI Secure Data Enclave} studies in parallel batches with \textbf{goroutines}, so the portal shows them without importing them and patient-level data never leaves NCI.
     \item Migrated cBioPortal from \textbf{MySQL} to \textbf{ClickHouse}, shipped in \textbf{cBioPortal v7.0.0} with MySQL retired; developed \textbf{blue-green deployments} to keep the website available during data imports.
-    \item Manage cBioPortal's \textbf{AWS EKS} clusters: \textbf{Terraform}-defined node groups on \textbf{EC2 Spot}, \textbf{Karpenter} NodePools, and \textbf{ArgoCD} GitOps deployments for the portal, Airflow, and Hermes Agent.
+    \item Manage cBioPortal's \textbf{AWS EKS} clusters: set up \textbf{Karpenter} autoscaling NodePools on \textbf{EC2 Spot}; maintain \textbf{Terraform} node groups and \textbf{ArgoCD} GitOps deployments.
     \item Migrate Cron imports to \textbf{Apache Airflow} and containerize the import workflows with \textbf{Docker}.
     \item Move GitHub-backed data storage to \textbf{Amazon S3} and \textbf{Databricks}, reducing Git LFS usage; implement dynamic scaling for AWS EC2 and RDS services.
     \item Engineer \textbf{Google BigQuery} ETL pipelines for the \textbf{National Cancer Institute}, making Cancer Research Data Commons datasets publicly accessible through cBioPortal Datahub.
