@@ -71,6 +71,7 @@
     \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it at the start of later sessions, and records whose evidence no longer holds are left out.
     \item Implemented \textbf{Qdrant filtered HNSW} and BM25 lexical retrieval, \textbf{reciprocal rank fusion}, and \textbf{cross-encoder reranking}; ingested vectors into Qdrant over \textbf{Tonic/gRPC}.
     \item Built a \textbf{distributed index}: each machine keeps its own \textbf{SQLite} history and replicates it to a shared index over authenticated \textbf{WebSockets} (\textbf{Protobuf}, \textbf{zstd}); replication is replayable and resumes safely after a crash, verified with \textbf{26 bounded TLA+ models}, property-based tests, and fault injection.
+    \item Built a \textbf{Raycast extension} with live search that answers each keystroke in \textbf{under 100 ms} over about 400,000 messages on a laptop, including process startup.
     \item Built a web dashboard on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
   \end{itemize}
 \end{itemize}
