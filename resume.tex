@@ -60,7 +60,7 @@
 \begin{itemize}
   \item \textbf{gohawk} --- Static analyzer for Go concurrency and resource bugs \hfill \textbf{\href{https://gohawk.dev}{gohawk.dev}}
   \begin{itemize}
-    \item Built an \textbf{SSA-based static analyzer} for Go that detects lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects; integrated with \textbf{go vet}; \textbf{165 GitHub stars}.
+    \item Built an \textbf{SSA-based static analyzer} for Go that detects lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects; integrated with \textbf{go vet}; \textbf{165 GitHub stars}. Across 500 scanned repositories, \textbf{246 of 248} reviewed findings were real problems.
     \item Analyzed all of \textbf{Kubernetes} (about 1,600 packages) in \textbf{76 seconds} with a custom runner that schedules packages on a \textbf{topological worklist} and never holds the whole program in memory.
     \item Implemented \textbf{compositional function summaries} inspired by Meta's Infer to track resource ownership across helpers and package boundaries.
     \item Found and fixed resource-leak and locking bugs in \textbf{11 open-source projects}, including \textbf{Docker}, \textbf{Kubernetes}, and \textbf{Caddy}, through \textbf{13 merged upstream PRs}.
@@ -81,14 +81,16 @@
 \begin{itemize}
   \item \textbf{Bioinformatics Engineer at Memorial Sloan Kettering} \hfill \textit{June 2023 -- present}
   \begin{itemize}
-    \item Connect \textbf{Hermes Agent}, a persistent AI assistant, to a \textbf{Bun MCP server} that runs data imports, with \textbf{Slack}, Discord, and Telegram gateways; deploy it to the \textbf{Kubernetes} cluster on a \textbf{Karpenter} NodePool for reliable uptime on \textbf{EC2 Spot} instances.
+    \item Connect \textbf{Hermes Agent}, a persistent AI assistant, to a \textbf{Bun MCP server} that runs data imports, with \textbf{Slack}, Discord, and Telegram gateways; deploy it to the \textbf{Kubernetes} cluster on a \textbf{Karpenter} NodePool for reliable uptime on \textbf{EC2 Spot} instances, with fallback model routing keeping inference under \textbf{\$0.50 a day}.
     \item Build a \textbf{Go microservice} that streams study data from the \textbf{NCI Secure Data Enclave} to cBioPortal using concurrent \textbf{goroutines}, decoupling study data from database representation.
-    \item Migrate cBioPortal from \textbf{MySQL} to \textbf{ClickHouse} and develop \textbf{blue-green deployments} to keep the website available during data imports.
+    \item Migrated cBioPortal from \textbf{MySQL} to \textbf{ClickHouse}, shipped in \textbf{cBioPortal v7.0.0} with MySQL retired; developed \textbf{blue-green deployments} to keep the website available during data imports.
     \item Migrate Cron imports to \textbf{Apache Airflow} and containerize workflows with \textbf{Docker/Kubernetes}; manage portal and Airflow deployments through \textbf{ArgoCD}.
     \item Move GitHub-backed data storage to \textbf{Amazon S3} and \textbf{Databricks}, reducing Git LFS usage; implement dynamic scaling for AWS EC2 and RDS services.
     \item Engineer \textbf{Google BigQuery} ETL pipelines for the \textbf{National Cancer Institute}, making Cancer Research Data Commons datasets publicly accessible through cBioPortal Datahub.
   \end{itemize}
 
+  % Keep this entry whole: page 1 ends just before it.
+  \newpage
   \item \textbf{Software Engineer at Massachusetts General Hospital} \hfill \textit{October 2022 -- June 2023}
   \begin{itemize}
     \item Managed clinical and imaging data ingestion for \textbf{DISCOVERY} and \textbf{MarkVCID}, studies of biomarkers for cognitive impairment and dementia.
@@ -105,7 +107,7 @@
 \rsection{Open Source \& Talks}
 
 \begin{itemize}
-  \item \textbf{GolangNYC} --- presented gohawk, with live demos of the leaks and deadlocks it catches \hfill \textit{Nov 2026}
+  \item \textbf{GolangNYC} --- \href{https://jamesko.net/talks/gohawk-golangnyc.pdf}{Gohawk: detect resource leaks and concurrency bugs in Go} \hfill \textit{Nov 2026}
   \item \textbf{cBioPortal Community Call} --- \href{https://www.slideshare.net/slideshow/transitioning-cbioportal-to-clickhouse-deployment-migration-and-future-enhancements/287861740}{Transitioning cBioPortal to ClickHouse} \hfill \textit{May 2026}
   \item \textbf{CDSI Lunch \& Learn} --- \href{https://www.slideshare.net/slideshow/hermes-agent-a-context-enhanced-ai-personal-assistant/287829731}{Hermes Agent: enhancing AI agents with context} \hfill \textit{May 2026}
   \item \textbf{Upstream fixes:} 13 merged PRs in 11 Go projects from gohawk findings, including a scheduler data race in \textbf{\href{https://github.com/kubernetes/kubernetes/pull/142429}{Kubernetes}}, an unreaped process in \textbf{\href{https://github.com/moby/moby/pull/53517}{Docker}}, and a lock inversion in \textbf{\href{https://github.com/caddyserver/caddy/pull/7968}{Caddy}}; others in Rancher Fleet, Flipt, Kairos, and DBOS.
