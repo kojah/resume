@@ -58,7 +58,7 @@
 \rsection{Projects}
 
 \begin{itemize}
-  \item \textbf{gohawk} --- Static analyzer for Go concurrency and resource bugs \hfill \textbf{\href{https://gohawk.dev}{gohawk.dev}}
+  \item \textbf{Gohawk} --- Static analyzer for Go concurrency and resource bugs \hfill \textbf{\href{https://gohawk.dev}{gohawk.dev}}
   \begin{itemize}
     \item Built an \textbf{SSA-based static analyzer} for Go that detects lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects; integrated with \textbf{go vet}; \textbf{165 GitHub stars}. Across 500 scanned repositories, \textbf{246 of 248} reviewed findings were real problems.
     \item Analyzed all of \textbf{Kubernetes} (about 1,600 packages) in \textbf{76 seconds} with a custom runner that schedules packages on a \textbf{topological worklist} and never holds the whole program in memory.
@@ -112,7 +112,7 @@
   \item \textbf{GolangNYC} --- \href{https://jamesko.net/talks/gohawk-golangnyc.pdf}{Gohawk: detect resource leaks and concurrency bugs in Go} \hfill \textit{Nov 2026}
   \item \textbf{cBioPortal Community Call} --- \href{https://www.slideshare.net/slideshow/transitioning-cbioportal-to-clickhouse-deployment-migration-and-future-enhancements/287861740}{Transitioning cBioPortal to ClickHouse} \hfill \textit{May 2026}
   \item \textbf{CDSI Lunch \& Learn} --- \href{https://www.slideshare.net/slideshow/hermes-agent-a-context-enhanced-ai-personal-assistant/287829731}{Hermes Agent: enhancing AI agents with context} \hfill \textit{May 2026}
-  \item \textbf{Upstream fixes:} 13 merged PRs in 11 Go projects from gohawk findings, including a scheduler data race in \textbf{\href{https://github.com/kubernetes/kubernetes/pull/142429}{Kubernetes}}, an unreaped process in \textbf{\href{https://github.com/moby/moby/pull/53517}{Docker}}, and a lock inversion in \textbf{\href{https://github.com/caddyserver/caddy/pull/7968}{Caddy}}; others in Rancher Fleet, Flipt, Kairos, and DBOS.
+  \item \textbf{Upstream fixes:} 13 merged PRs in 11 Go projects from Gohawk findings, including a scheduler data race in \textbf{\href{https://github.com/kubernetes/kubernetes/pull/142429}{Kubernetes}}, an unreaped process in \textbf{\href{https://github.com/moby/moby/pull/53517}{Docker}}, and a lock inversion in \textbf{\href{https://github.com/caddyserver/caddy/pull/7968}{Caddy}}; others in Rancher Fleet, Flipt, Kairos, and DBOS.
 \end{itemize}
 
 %--- Education ---%
