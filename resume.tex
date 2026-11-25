@@ -68,10 +68,11 @@
   \item \textbf{Mash} --- Searchable memory for coding agents \hfill \textbf{\href{https://getmash.io}{getmash.io}}
   \begin{itemize}
     \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools on Linux, macOS, and Windows; my own deployment indexes \textbf{4,500+ chats across four machines}.
-    \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it at the start of later sessions, and records whose evidence no longer holds are left out.
+    \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it later.
     \item Implemented \textbf{Qdrant filtered HNSW} and BM25 lexical retrieval, \textbf{reciprocal rank fusion}, and \textbf{cross-encoder reranking}; ingested vectors into Qdrant over \textbf{Tonic/gRPC}.
+    \item Accelerated embedding and reranking with \textbf{ONNX Runtime} on \textbf{Core ML}, \textbf{DirectML}, and \textbf{CUDA}; on an NVIDIA T4, embedding ran about \textbf{9$\times$ faster} than the CPU and reranking took \textbf{30--130 ms} vs.\ 0.5--2 s.
     \item Built a \textbf{distributed index}: each machine keeps its own \textbf{SQLite} history and replicates it to a shared index over authenticated \textbf{WebSockets} (\textbf{Protobuf}, \textbf{zstd}); replication is replayable and resumes safely after a crash, verified with \textbf{26 bounded TLA+ models}, property-based tests, and fault injection.
-    \item Built a \textbf{Raycast extension} with live search that answers each keystroke in \textbf{under 100 ms} over about 400,000 messages on a laptop, including process startup.
+    \item Built a \textbf{Raycast extension} whose live search answers each keystroke in \textbf{under 100 ms} over 400,000 messages.
     \item Built a web dashboard on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
   \end{itemize}
 \end{itemize}
@@ -129,7 +130,7 @@
 
 \begin{itemize}
   \item \textbf{Languages:} Rust, Go, Python, TypeScript, Swift, C\#, SQL
-  \item \textbf{AI Agents \& Retrieval:} MCP servers, LLM integration, semantic embeddings, hybrid retrieval, cross-encoder reranking, Qdrant
+  \item \textbf{AI Agents \& Retrieval:} MCP servers, LLM integration, semantic embeddings, hybrid retrieval, cross-encoder reranking, Qdrant, ONNX Runtime
   \item \textbf{Systems \& Data:} Tokio/Axum, gRPC/Protobuf, WebSockets, SQLite, ClickHouse, BigQuery, Airflow
   \item \textbf{Infrastructure:} Kubernetes, Karpenter, Docker, ArgoCD, Ansible, AWS
   \item \textbf{Analysis \& Verification:} SSA-based static analysis, TLA+/PlusCal, property-based testing
