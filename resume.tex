@@ -58,14 +58,6 @@
 \rsection{Projects}
 
 \begin{itemize}
-  \item \textbf{Mash} --- Searchable memory for coding agents \hfill \textbf{\href{https://getmash.io}{getmash.io}}
-  \begin{itemize}
-    \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor, on Linux, macOS, and Windows.
-    \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it at the start of later sessions, and records whose evidence no longer holds are left out.
-    \item Implemented \textbf{Qdrant filtered HNSW} and BM25 lexical retrieval, \textbf{reciprocal rank fusion}, and \textbf{cross-encoder reranking}; ingested vectors into Qdrant over \textbf{Tonic/gRPC}.
-    \item Designed it as a \textbf{distributed system}: each machine keeps its own \textbf{SQLite} history and replicates it to a shared index over authenticated \textbf{WebSockets} (\textbf{Protobuf}, \textbf{zstd}); replication is replayable and resumes safely after a crash, verified with bounded \textbf{TLA+ models}, property-based tests, and fault injection.
-    \item Built a web dashboard on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
-  \end{itemize}
   \item \textbf{gohawk} --- Static analyzer for Go concurrency and resource bugs \hfill \textbf{\href{https://gohawk.dev}{gohawk.dev}}
   \begin{itemize}
     \item Built an \textbf{SSA-based static analyzer} for Go that detects lock-ordering violations, resource leaks, goroutine lifecycle bugs, and cancellation defects; integrated with \textbf{go vet}.
@@ -73,6 +65,14 @@
     \item Implemented \textbf{compositional function summaries} inspired by Meta's Infer to track resource ownership across helpers and package boundaries.
     \item Found and fixed bugs in \textbf{Docker}, \textbf{Kubernetes}, and \textbf{Caddy} through upstream PRs.
     \item Presented \textbf{gohawk} at \textbf{GolangNYC}.
+  \end{itemize}
+  \item \textbf{Mash} --- Searchable memory for coding agents \hfill \textbf{\href{https://getmash.io}{getmash.io}}
+  \begin{itemize}
+    \item Built a \textbf{Rust CLI} and \textbf{MCP server} that let coding agents retrieve prior conversations across six agent tools, including Claude Code, Codex, and Cursor, on Linux, macOS, and Windows.
+    \item Designed an \textbf{agent memory layer} that saves decisions, preferences, and facts with verbatim citations to the source transcript; session hooks capture memory as it is stated and recall it at the start of later sessions, and records whose evidence no longer holds are left out.
+    \item Implemented \textbf{Qdrant filtered HNSW} and BM25 lexical retrieval, \textbf{reciprocal rank fusion}, and \textbf{cross-encoder reranking}; ingested vectors into Qdrant over \textbf{Tonic/gRPC}.
+    \item Designed it as a \textbf{distributed system}: each machine keeps its own \textbf{SQLite} history and replicates it to a shared index over authenticated \textbf{WebSockets} (\textbf{Protobuf}, \textbf{zstd}); replication is replayable and resumes safely after a crash, verified with bounded \textbf{TLA+ models}, property-based tests, and fault injection.
+    \item Built a web dashboard on an \textbf{Axum} API to browse, search, and export chats, inspect agent memory, and monitor and deploy services across a fleet of machines through \textbf{Ansible}.
   \end{itemize}
 \end{itemize}
 
